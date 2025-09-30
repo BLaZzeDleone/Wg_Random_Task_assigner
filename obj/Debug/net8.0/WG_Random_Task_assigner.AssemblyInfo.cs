@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WG_Random_Task_assigner")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c69dd9e8f7bf37e54ff0f9d119476deb02ec0d6a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca0ba71283f86aedfcd17656a48f96ecbdf4828e")]
 [assembly: System.Reflection.AssemblyProductAttribute("WG_Random_Task_assigner")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WG_Random_Task_assigner")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
