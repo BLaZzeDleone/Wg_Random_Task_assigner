@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "WG_Random_Task_assigner/1.0.0": {
+        "runtime": {
+          "WG_Random_Task_assigner.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WG_Random_Task_assigner/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
