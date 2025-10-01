@@ -25,3 +25,4 @@ C:\Users\giuse\Documents\WG_Planer\WG_Random_Task_assigner\WG_Random_Task_assign
 C:\Users\giuse\Documents\WG_Planer\WG_Random_Task_assigner\WG_Random_Task_assigner\obj\Debug\net8.0\WG_Random_Task_assigner.pdb
 C:\Users\giuse\Documents\WG_Planer\WG_Random_Task_assigner\WG_Random_Task_assigner\obj\Debug\net8.0\WG_Random_Task_assigner.genruntimeconfig.cache
 C:\Users\giuse\Documents\WG_Planer\WG_Random_Task_assigner\WG_Random_Task_assigner\obj\Debug\net8.0\ref\WG_Random_Task_assigner.dll
+C:\Users\giuse\Documents\WG_Planer\WG_Random_Task_assigner\WG_Random_Task_assigner\obj\Debug\net8.0\WG_Random_Task_assigner.sourcelink.json
