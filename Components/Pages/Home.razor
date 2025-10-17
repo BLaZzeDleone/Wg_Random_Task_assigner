@@ -1,9 +1,47 @@
 ﻿@page "/"
+@inject WG_Random_Task_assigner.Tool.Task_Assigner_Class TaskAssigner
 
-<PageTitle>Home</PageTitle>
+<h2>WG Aufgabenplan</h2>
 
-<h2>WG Assiging Tasking</h2>
+@for (int weekOffset = 0; weekOffset < 3; weekOffset++)
+{
+    var assignments = TaskAssigner.GetAssignmentsForWeek(weekOffset);
 
+    <h3>Woche: @TaskAssigner.GetWeekLabel(weekOffset)</h3>
 
+    <div class="d-flex justify-content-between">
+        @foreach (var person in Personen)
+        {
+            var data = assignments[person];
 
+            <table class="table table-bordered" style="width: 32%;">
+                <thead>
+                    <tr>
+                        <th colspan="2" class="text-center">@person</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>Bereich</b></td>
+                        <td>@data.Bereich</td>
+                    </tr>
+                    <tr>
+                        <td><b>Tasks</b></td>
+                        <td>
+                            <ul>
+                                @foreach (var t in data.Tasks)
+                                {
+                                    <li>@t</li>
+                                }
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        }
+    </div>
+}
 
+@code {
+    private List<string> Personen = new WG_Random_Task_assigner.Object_Folder.WG_Mitglieder().mitglieder;
+}

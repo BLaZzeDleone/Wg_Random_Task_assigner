@@ -1,10 +1,14 @@
 using WG_Random_Task_assigner.Components;
+using WG_Random_Task_assigner.Tool;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+
+builder.Services.AddSingleton<Task_Assigner_Class>();
 
 var app = builder.Build();
 
