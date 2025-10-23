@@ -1,0 +1,92 @@
+﻿/* overall page */
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #f8fafc;
+    color: #222;
+    margin: 0;
+    padding: 1rem;
+}
+
+.page-title {
+    text-align: center;
+    color: #2b6cb0;
+    margin-bottom: 2rem;
+}
+
+.week-title {
+    margin-top: 2rem;
+    color: #2f855a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.25rem;
+}
+
+.people-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.person-card {
+    flex: 1 1 300px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    overflow: hidden;
+}
+
+    .person-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+
+.person-header {
+    background-color: #4299e1;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    padding: 0.5rem;
+}
+
+.person-content {
+    padding: 1rem;
+}
+
+.field {
+    margin-bottom: 0.75rem;
+}
+
+.label {
+    font-weight: 600;
+    color: #4a5568;
+    display: inline-block;
+    min-width: 80px;
+}
+
+.value {
+    color: #2d3748;
+}
+
+.task-list {
+    margin: 0.5rem 0 0 1rem;
+    padding: 0;
+}
+
+    .task-list li {
+        list-style-type: "• ";
+        margin-bottom: 0.25rem;
+    }
+
+/* Optional mobile tweak */
+    @media (max-width: 600px) {
+        .people-container {
+            flex-direction: column;
+        }
+
+        .person-content {
+            max-height: 40vh; /* keeps card readable */
+            overflow-y: auto; /* scroll when tasks overflow */
+            -webkit-overflow-scrolling: touch; /* smooth iOS scroll */
+        }
+    }

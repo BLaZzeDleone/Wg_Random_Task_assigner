@@ -1,43 +1,39 @@
 ﻿@page "/"
 @inject WG_Random_Task_assigner.Tool.Task_Assigner_Class TaskAssigner
 
-<h2>WG Aufgabenplan</h2>
+<h2 class="page-title">WG Aufgabenplan</h2>
 
 @for (int weekOffset = 0; weekOffset < 3; weekOffset++)
 {
     var assignments = TaskAssigner.GetAssignmentsForWeek(weekOffset);
 
-    <h3>Woche: @TaskAssigner.GetWeekLabel(weekOffset)</h3>
+    <h3 class="week-title">Woche: @TaskAssigner.GetWeekLabel(weekOffset)</h3>
 
-    <div class="d-flex justify-content-between">
+    <div class="people-container">
         @foreach (var person in Personen)
         {
             var data = assignments[person];
 
-            <table class="table table-bordered" style="width: 32%;">
-                <thead>
-                    <tr>
-                        <th colspan="2" class="text-center">@person</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><b>Bereich</b></td>
-                        <td>@data.Bereich</td>
-                    </tr>
-                    <tr>
-                        <td><b>Tasks</b></td>
-                        <td>
-                            <ul>
-                                @foreach (var t in data.Tasks)
-                                {
-                                    <li>@t</li>
-                                }
-                            </ul>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="person-card">
+                <div class="person-header">@person</div>
+
+                <div class="person-content">
+                    <div class="field">
+                        <span class="label">Bereich:</span>
+                        <span class="value">@data.Bereich</span>
+                    </div>
+
+                    <div class="field">
+                        <span class="label">Tasks:</span>
+                        <ul class="task-list">
+                            @foreach (var t in data.Tasks)
+                            {
+                                <li>@t</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
         }
     </div>
 }
