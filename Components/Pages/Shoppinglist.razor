@@ -1,0 +1,26 @@
+﻿@page "/shoppinglist"
+@rendermode InteractiveServer
+@using Microsoft.EntityFrameworkCore
+@using WG_Random_Task_assigner.Object_Folder.DB
+@inject AppDbContext db
+
+<PageTitle>Shoppinglist</PageTitle>
+
+<h3>Shopping List</h3>
+
+<ul>
+@foreach (var item in items)
+{
+    <li>@item.name (@item.quantity)</li>
+}
+</ul>
+
+@code {
+    // Use the full namespace for the EF Core model
+    private List<WG_Random_Task_assigner.Object_Folder.DB.Shoppinglist> items = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        items = await db.shoppinglist.ToListAsync();
+    }
+}
