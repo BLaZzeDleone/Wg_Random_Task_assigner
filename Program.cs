@@ -1,5 +1,8 @@
 using WG_Random_Task_assigner.Components;
 using WG_Random_Task_assigner.Tool;
+using Microsoft.EntityFrameworkCore;      
+using WG_Random_Task_assigner.Object_Folder.DB;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +13,15 @@ builder.Services.AddRazorComponents()
 
 builder.Services.AddSingleton<Task_Assigner_Class>();
 
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(connectionString));
+
 var app = builder.Build();
+
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -27,5 +38,4 @@ app.UseAntiforgery();
 
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
-
 app.Run();
